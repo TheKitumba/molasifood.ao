@@ -1,8 +1,9 @@
-import { HeroSection } from "@/components/hero-section"
-import { AboutSection } from "@/components/about-section"
-import { GallerySection } from "@/components/gallery-section"
-import { MenuSection } from "@/components/menu-section"
-import { ContactSection } from "@/components/contact-section"
+"use client";
+import { AboutSection } from "@/components/about-section";
+import { ContactSection } from "@/components/contact-section";
+import { GallerySection } from "@/components/gallery-section";
+import { HeroSection } from "@/components/hero-section";
+import { MenuSection } from "@/components/menu-section";
 
 export default function Home() {
   return (
@@ -13,5 +14,5 @@ export default function Home() {
       <MenuSection />
       <ContactSection />
     </div>
-  )
+  );
 }
