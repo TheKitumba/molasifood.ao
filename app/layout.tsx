@@ -1,32 +1,29 @@
-import type React from "react"
-import "./globals.css"
-import type { Metadata } from "next"
-import { Poppins, Playfair_Display } from "next/font/google"
-import { ThemeProvider } from "@/components/theme-provider"
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
+import type { Metadata } from "next";
+import { Playfair_Display, Poppins } from "next/font/google";
+import type React from "react";
+import "./globals.css";
 
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
   variable: "--font-poppins",
-})
+});
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
   variable: "--font-playfair",
-})
+});
 
 export const metadata: Metadata = {
   title: "Molasi Food - O verdadeiro sabor do mufete angolano",
   description: "Restaurante especializado em mufete tradicional angolano",
-    generator: 'v0.dev'
-}
+  generator: "v0.dev",
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="pt" suppressHydrationWarning>
@@ -39,12 +36,8 @@ export default function RootLayout({
         />
       </head>
       <body className={`${poppins.variable} ${playfair.variable} font-sans`}>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-          <Header />
-          <main>{children}</main>
-          <Footer />
-        </ThemeProvider>
+        <main>{children}</main>
       </body>
     </html>
-  )
+  );
 }
